@@ -9,7 +9,7 @@ import camp.nextstep.edu.missionutils.Console;
 
 public class InputView {
 
-    public int getLottoAmount()
+    public int getLottoCnt()
     {
         System.out.println("구입금액을 입력해 주세요.");
         int amount = Integer.parseInt(Console.readLine());
@@ -19,7 +19,7 @@ public class InputView {
             throw new IllegalArgumentException("[ERROR] 금액은 1000단위로 입력해야 합니다.");
         }
 
-        return amount;
+        return amount / 1000;
     }
 
     public List<Integer> getWinningNumbers()
