@@ -9,6 +9,8 @@ import camp.nextstep.edu.missionutils.Console;
 
 public class InputView {
 
+    Lotto lotto;
+
     public int getLottoCnt()
     {
         System.out.println("구입금액을 입력해 주세요.");
@@ -22,7 +24,7 @@ public class InputView {
         return amount / 1000;
     }
 
-    public List<Integer> getWinningNumbers()
+    public Lotto getWinningLotto()
     {
         System.out.println("당첨 번호를 입력해 주세요.");
         List<Integer> winningNumbers = new ArrayList<>();
@@ -37,8 +39,9 @@ public class InputView {
             winningNumbers.add(num);
 
         }
+        lotto = new Lotto(winningNumbers);
 
-        return winningNumbers;
+        return lotto;
     }
 
     public int getBonusNumber()
