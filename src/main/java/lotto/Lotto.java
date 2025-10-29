@@ -17,6 +17,14 @@ public class Lotto {
         }
     }
 
+    public boolean checkDuplicationBonusNum(int bonusNum)
+    {
+        if(numbers.contains(bonusNum))
+            return true;
+
+        return false;
+    }
+
     public void setBonusNum(int bonusNum)
     {
         this.bonusNum = bonusNum;

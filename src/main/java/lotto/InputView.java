@@ -9,7 +9,7 @@ import camp.nextstep.edu.missionutils.Console;
 
 public class InputView {
 
-    Lotto lotto;
+    private Lotto lotto;
 
     public int getLottoCnt()
     {
@@ -36,6 +36,9 @@ public class InputView {
             if(num < 1 || num > 45)
                 throw new IllegalArgumentException("[ERROR] 로또 번호는 1부터 45 사이의 숫자여야 합니다.");
 
+            if(winningNumbers.contains(num))
+                throw new IllegalArgumentException("[ERROR] 로또 번호는 중복될 수 없습니다.");
+
             winningNumbers.add(num);
 
         }
@@ -50,6 +53,9 @@ public class InputView {
         int bonusNumber = Integer.parseInt(Console.readLine());
         if(bonusNumber < 1 || bonusNumber > 45)
             throw new IllegalArgumentException("[ERROR] 로또 번호는 1부터 45 사이의 숫자여야 합니다.");
+
+        if(lotto.checkDuplicationBonusNum(bonusNumber))
+            throw new IllegalArgumentException("[ERROR] 로또 번호는 중복될 수 없습니다.");
 
         return bonusNumber;
     }
