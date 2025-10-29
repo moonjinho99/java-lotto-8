@@ -34,4 +34,9 @@ public class Lotto {
     {
         return this.bonusNum;
     }
+
+    public List<Integer> getNumbers()
+    {
+        return this.numbers;
+    }
 }

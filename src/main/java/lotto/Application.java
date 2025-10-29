@@ -12,5 +12,10 @@ public class Application {
 
         Lotto lotto = inputView.retryUntilVaild(inputView::getWinningLotto);
         lotto.setBonusNum(inputView.retryUntilVaild(inputView::getBonusNumber));
+
+        CheckLotto checkLotto = new CheckLotto(lotto,userLotto);
+        checkLotto.check();
+
+        outputView.printResult(checkLotto.getResultMap());
     }
 }

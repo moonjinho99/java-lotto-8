@@ -1,13 +1,14 @@
 package lotto;
 
 import java.util.List;
+import java.util.Map;
 
 public class OutputView {
 
     public OutputView(int cnt, UserLotto userLotto)
     {
         printPurchase(cnt);
-        printLotto(userLotto.getUserLottos());
+        printLotto(userLotto.getUserNumbers());
     }
 
     private void printPurchase(int cnt)
@@ -23,9 +24,15 @@ public class OutputView {
         }
     }
 
-    public void printResult()
+    public void printResult(Map<LottoRank,Integer> resultMap)
     {
+        for(LottoRank rank : resultMap.keySet())
+        {
+            if(rank.equals(LottoRank.NONE))
+                continue;
 
+            System.out.println(rank.getMatchCount()+"개 일치 ("+String.format("%,d", rank.getPrize()) +"원) - "+resultMap.get(rank)+"개");
+        }
     }
 
 }

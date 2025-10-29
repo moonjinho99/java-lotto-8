@@ -13,7 +13,7 @@ public class UserLottoTest {
     void 로또번호_초기화_테스트()
     {
         UserLotto userLotto = new UserLotto(3);
-        List<List<Integer>> userLottoList = userLotto.getUserLottos();
+        List<List<Integer>> userLottoList = userLotto.getUserNumbers();
 
         assertThat(userLottoList.size()).isEqualTo(3);
         for(List<Integer> lotto : userLottoList)

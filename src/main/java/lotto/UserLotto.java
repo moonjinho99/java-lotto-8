@@ -8,11 +8,11 @@ import java.util.List;
 
 public class UserLotto {
 
-    private List<List<Integer>> userLottos;
+    private List<List<Integer>> userNumbers;
 
     public UserLotto(int cnt)
     {
-        userLottos = new ArrayList<>();
+        userNumbers = new ArrayList<>();
         createUserLottos(cnt);
     }
 
@@ -22,12 +22,12 @@ public class UserLotto {
         {
             List<Integer> lottoList = Randoms.pickUniqueNumbersInRange(1, 45, 6);
             Collections.sort(lottoList);
-            userLottos.add(new ArrayList<>(lottoList));
+            userNumbers.add(new ArrayList<>(lottoList));
         }
     }
 
-    public List<List<Integer>> getUserLottos()
+    public List<List<Integer>> getUserNumbers()
     {
-        return this.userLottos;
+        return this.userNumbers;
     }
 }
