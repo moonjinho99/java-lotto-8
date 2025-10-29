@@ -57,6 +57,19 @@ public class CheckLotto {
 
     }
 
+    public double getPricePercent(int amount)
+    {
+        int sum = 0;
+        for(LottoRank rank : resultMap.keySet())
+        {
+            sum += rank.getPrize() * resultMap.get(rank);
+        }
+
+        double percent = (double) sum / amount * 100;
+
+        return Math.round(percent*10) / 10.0;
+    }
+
     public Map<LottoRank,Integer> getResultMap()
     {
         return this.resultMap;

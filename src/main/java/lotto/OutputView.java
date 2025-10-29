@@ -35,4 +35,8 @@ public class OutputView {
         }
     }
 
+    public void printPricePercent(double percent)
+    {
+        System.out.println("총 수익률은 "+percent+"%입니다.");
+    }
 }

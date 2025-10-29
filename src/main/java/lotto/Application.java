@@ -5,8 +5,9 @@ import java.util.List;
 public class Application {
     public static void main(String[] args) {
         InputView inputView = new InputView();
-        int lottoCnt = inputView.retryUntilVaild(inputView::getLottoCnt);
+        int amount = inputView.retryUntilVaild(inputView::getAmount);
 
+        int lottoCnt = amount/1000;
         UserLotto userLotto = new UserLotto(lottoCnt);
         OutputView outputView = new OutputView(lottoCnt, userLotto);
 
@@ -17,5 +18,6 @@ public class Application {
         checkLotto.check();
 
         outputView.printResult(checkLotto.getResultMap());
+        outputView.printPricePercent(checkLotto.getPricePercent(amount));
     }
 }
