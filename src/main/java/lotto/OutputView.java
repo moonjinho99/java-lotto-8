@@ -4,12 +4,9 @@ import java.util.List;
 
 public class OutputView {
 
-    private UserLotto userLotto;
-
-    public OutputView(int cnt)
+    public OutputView(int cnt, UserLotto userLotto)
     {
         printPurchase(cnt);
-        userLotto = new UserLotto(cnt);
         printLotto(userLotto.getUserLottos());
     }
 
